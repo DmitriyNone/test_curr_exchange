@@ -2,13 +2,13 @@ import requests
 import json
 from datetime import datetime, timedelta
 
-open_exchange_rates_id = '################################'
+open_exchange_rates_id = '###'
 open_exchange_rates_api_location = "https://openexchangerates.org/api/latest.json?app_id="
 request_address = open_exchange_rates_api_location + open_exchange_rates_id
 rates_file = 'rates.json'
 
 
-class Currency:
+class CurrencyClass:
     def __init__(self, data_file, site_rates):
         self.base = 'USD'
         self.rates = {}
@@ -58,19 +58,3 @@ class Currency:
         base_amount = self.curr_to_base(from_curr, amount)
         curr_amount = self.base_to_curr(to_curr, base_amount)
         return curr_amount
-
-
-a = Currency(rates_file, request_address)
-print(a)
-print()
-val = 100
-print(a.curr_to_base('EUR', val))
-print(a.curr_to_base('CZK', val))
-print(a.curr_to_base('PLN', val))
-
-print(a.base_to_curr('EUR', val))
-print(a.base_to_curr('CZK', val))
-print(a.base_to_curr('PLN', val))
-print()
-
-print(a.curr_to_curr('PLN', 'CZK', val))

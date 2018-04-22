@@ -25,7 +25,7 @@ SECRET_KEY = 'v*j1z@j0us(dpaca@twwn7ii$^xri6^edw%nv-qn2392j1_%&y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.198.5.72']
+ALLOWED_HOSTS = ['10.198.5.72', '127.0.0.1']
 
 
 # Application definition
@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'polls.apps.PollsConfig',
+    'snippets.apps.SnippetsConfig',
+    'quickstart.apps.QuickstartConfig',
+
 
 ]
 
